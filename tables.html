@@ -79,7 +79,7 @@
 
 
 <script type="text/javascript">
-
+    // Reservation section 
     function tableQuery() {
         var currentURL = window.location.origin;
         $.ajax({ url: currentURL + "/api/tables", method: "GET" })
@@ -90,7 +90,7 @@
                 console.log(data);
 
                 for (var i = 0; i < data.length; i++) {
-
+                    // Create a sction and append it to the page
                     var tableSection = $("<div>");
                     tableSection.addClass('well');
                     tableSection.attr('id', 'tableWell-' + i + 1)
@@ -101,7 +101,7 @@
                 }
             });
     }
-
+    // Waitlist section
     function waitListQuery() {
         var currentURL = window.location.origin;
         $.ajax({ url: currentURL + "/api/waitlist", method: "GET" })
@@ -110,7 +110,7 @@
                 console.log(data);
 
                 for (var i = 0; i < data.length; i++) {
-
+                    // Create a sction and append it to the page
                     var waitlistSection = $("<div>");
                     waitlistSection.addClass('well');
                     waitlistSection.attr('id', 'waitlistWell-' + i + 1)
@@ -127,14 +127,14 @@
         var currentURL = window.location.origin;
         $.ajax({ url: currentURL + "/api/clear", method: "POST" })
     }
-
+    // An event to clear tables
     $("#clear").on('click', function () {
         alert("Clearing...");
         clearTable();
         // Refresh the page after data is cleared
         location.reload();
     })
-
+    // Run functions
     tableQuery();
     waitListQuery();
 
