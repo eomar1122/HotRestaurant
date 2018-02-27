@@ -79,45 +79,45 @@
 
 
 <script type="text/javascript">
-    // Reservation section 
-    function tableQuery() {
+    // Reservation Section 
+    function tables() {
         var currentURL = window.location.origin;
         $.ajax({ url: currentURL + "/api/tables", method: "GET" })
             .then(function (data) {
 
-                console.log("URL: " + currentURL + "/api/tables");
+                console.log("Current URL: " + currentURL + "/api/tables");
 
                 console.log(data);
 
                 for (var i = 0; i < data.length; i++) {
                     // Create a sction and append it to the page
                     var tableSection = $("<div>");
-                    tableSection.addClass('well');
-                    tableSection.attr('id', 'tableWell-' + i + 1)
+                    tableSection.addClass('table-class');
+                    tableSection.attr('id', 'table-id' + i + 1)
                     $('#tableSection').append(tableSection);
 
                     var tableNumber = i + 1;
-                    $("#tableWell-" + i + 1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + data[i].customerID + "</h2>");
+                    $("#table-id" + i + 1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + data[i].customerID + "</h2>");
                 }
             });
     }
-    // Waitlist section
-    function waitListQuery() {
+    // Waitlist Section
+    function waitlist() {
         var currentURL = window.location.origin;
         $.ajax({ url: currentURL + "/api/waitlist", method: "GET" })
             .then(function (data) {
-                console.log("URL: " + currentURL + "/api/waitlist");
+                console.log("Current URL: " + currentURL + "/api/waitlist");
                 console.log(data);
 
                 for (var i = 0; i < data.length; i++) {
                     // Create a sction and append it to the page
                     var waitlistSection = $("<div>");
-                    waitlistSection.addClass('well');
-                    waitlistSection.attr('id', 'waitlistWell-' + i + 1)
+                    waitlistSection.addClass("waitlist-class");
+                    waitlistSection.attr("id", 'waitlist-id' + i + 1)
                     $('#waitlistSection').append(waitlistSection);
                     var tableNumber = i + 1;
 
-                    $("#waitlistWell-" + i + 1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + data[i].customerID + "</h2>");
+                    $("#waitlist-id" + i + 1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + data[i].customerID + "</h2>");
                 }
             });
     }
@@ -129,14 +129,14 @@
     }
     // An event to clear tables
     $("#clear").on('click', function () {
-        alert("Clearing...");
+        alert("Clearing the table and waitlist!");
         clearTable();
         // Refresh the page after data is cleared
         location.reload();
     })
     // Run functions
-    tableQuery();
-    waitListQuery();
+    tables();
+    waitlist();
 
 </script>
 
