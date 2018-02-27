@@ -28,9 +28,9 @@ app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 app.get("/api/reservations", function(req, res) {
-    res.json(reservations)
+    res.json(reservations);
 });
-app.get("/api/waitingList", function(req, res) {
+app.get("/api/waitinglist", function(req, res) {
     res.json(waitingList);
 });
 
@@ -38,7 +38,7 @@ app.get("/api/waitingList", function(req, res) {
 app.post("/api/new", function(req, res) {
     let newReservation = req.body;
     console.log(newReservation);
-    if (resrvations.length < 5) {
+    if (reservations.length < 5) {
         reservations.push(newReservation);
     }
     else {
