@@ -80,12 +80,12 @@
 
 <script type="text/javascript">
     // Reservation Section 
-    function tables() {
+    function reservation() {
         var currentURL = window.location.origin;
-        $.ajax({ url: currentURL + "/api/tables", method: "GET" })
+        $.ajax({ url: currentURL + "/api/reservations", method: "GET" })
             .then(function (data) {
 
-                console.log("Current URL: " + currentURL + "/api/tables");
+                console.log("Current URL: " + currentURL + "/api/reservations");
 
                 console.log(data);
 
@@ -135,7 +135,7 @@
         location.reload();
     })
     // Run functions
-    tables();
+    reservation();
     waitlist();
 
 </script>
