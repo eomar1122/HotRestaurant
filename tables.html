@@ -92,12 +92,12 @@
                 for (var i = 0; i < data.length; i++) {
                     // Create a sction and append it to the page
                     var tableSection = $("<div>");
-                    tableSection.addClass('table-class');
-                    tableSection.attr('id', 'table-id' + i + 1)
-                    $('#tableSection').append(tableSection);
+                    tableSection.addClass("table-class");
+                    tableSection.attr("id", "table-id" + i + 1)
+                    $("#tableSection").append(tableSection);
 
-                    var tableNumber = i + 1;
-                    $("#table-id" + i + 1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + data[i].customerID + "</h2>");
+                    var resrvationNumber = i + 1;
+                    $("#table-id" + i + 1).append('<h2><span class="label label-primary">' + resrvationNumber + "</span> | " + data[i].customerID + "</h2>");
                 }
             });
     }
@@ -113,11 +113,11 @@
                     // Create a sction and append it to the page
                     var waitlistSection = $("<div>");
                     waitlistSection.addClass("waitlist-class");
-                    waitlistSection.attr("id", 'waitlist-id' + i + 1)
+                    waitlistSection.attr("id", "waitlist-id" + i + 1)
                     $('#waitlistSection').append(waitlistSection);
-                    var tableNumber = i + 1;
+                    var waitlistNumber = i + 1;
 
-                    $("#waitlist-id" + i + 1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + data[i].customerID + "</h2>");
+                    $("#waitlist-id" + i + 1).append('<h2><span class="label label-primary">' + waitlistNumber + "</span> | " + data[i].customerID + "</h2>");
                 }
             });
     }
