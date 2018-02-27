@@ -27,14 +27,26 @@ app.get("/reserve", function(req, res) {
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
+app.get("/api/reservations", function(req, res) {
+    res.json(reservations)
+});
+app.get("/api/waitingList", function(req, res) {
+    res.json(waitingList);
+});
 
 // Create new reservation
-app.post("/reservation/new", function(req, res) {
+app.post("/api/new", function(req, res) {
     let newReservation = req.body;
     console.log(newReservation);
-    reservations.push(newReservation);
+    if (resrvations.length < 5) {
+        reservations.push(newReservation);
+    }
+    else {
+        waitingList.push(newReservation);
+    }
     res.json(newReservation);
 });
+
 
 // Starts the server to begin listening
 app.listen(PORT, function() {
