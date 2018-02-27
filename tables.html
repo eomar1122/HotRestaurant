@@ -68,7 +68,7 @@
                 <p>
                     <a href="#" id="clear">Clear Table</a> |
                     <a href="/api/tables">API Table Link</a> |
-                    <a href="/api/waitlist">API Wait List</a>
+                    <a href="/api/waitinglist">API Wait List</a>
                 </p>
             </div>
         </footer>
@@ -104,9 +104,9 @@
     // Waitlist Section
     function waitlist() {
         var currentURL = window.location.origin;
-        $.ajax({ url: currentURL + "/api/waitlist", method: "GET" })
+        $.ajax({ url: currentURL + "/api/waitinglist", method: "GET" })
             .then(function (data) {
-                console.log("Current URL: " + currentURL + "/api/waitlist");
+                console.log("Current URL: " + currentURL + "/api/waitinglist");
                 console.log(data);
 
                 for (var i = 0; i < data.length; i++) {
