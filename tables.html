@@ -67,7 +67,7 @@
                 <p>Control Panel</p>
                 <p>
                     <a href="#" id="clear">Clear Table</a> |
-                    <a href="/api/tables">API Table Link</a> |
+                    <a href="/api/reservations">API Table Link</a> |
                     <a href="/api/waitinglist">API Wait List</a>
                 </p>
             </div>
@@ -97,7 +97,7 @@
                     $("#tableSection").append(tableSection);
 
                     var resrvationNumber = i + 1;
-                    $("#table-id" + i + 1).append('<h2><span class="label label-primary">' + resrvationNumber + "</span> | " + data[i].customerID + "</h2>");
+                    $("#table-id" + i + 1).append('<h2><span class="label label-primary">' + resrvationNumber + "</span> | " + data[i].uniqueId + "</h2>");
                 }
             });
     }
@@ -117,7 +117,7 @@
                     $('#waitlistSection').append(waitlistSection);
                     var waitlistNumber = i + 1;
 
-                    $("#waitlist-id" + i + 1).append('<h2><span class="label label-primary">' + waitlistNumber + "</span> | " + data[i].customerID + "</h2>");
+                    $("#waitlist-id" + i + 1).append('<h2><span class="label label-primary">' + waitlistNumber + "</span> | " + data[i].uniqueId + "</h2>");
                 }
             });
     }
